@@ -1,46 +1,26 @@
 const express = require("express");
+const { check } = require("express-validator");
+
+const restaurantsControllers = require("../controllers/restaurants-controller");
 
 const router = express.Router();
 
-const DUMMY_RESTAURANTS = [
-  {
-    id: "p1",
-    title: "ASIAN",
-    description: "amazing asian food",
-    address: "local 123, New York",
-    creator: "u1",
-  },
-];
+router.get("/:id", restaurantsControllers.getRestaurantById);
 
-router.get("/:id", (req, res, next) => {
-  const restaurantId = req.params.id;
-  const restaurant = DUMMY_RESTAURANTS.find((rest) => {
-    return rest.id === restaurantId;
-  });
+router.get("/user/:uid", restaurantsControllers.getRestaurantsByUSerId);
 
-  if (!restaurant) {
-    const error = new Error("Could not find a restaurant for the provided id.");
-    error.code = 404;
-    return next(error);
-  }
-  res.json({ restaurant });
-});
+router.post(
+  "/",
+  [check("title").not().isEmpty(), check("description").isLength({ min: 5 })],
+  restaurantsControllers.createRestaurant
+);
 
-router.get("/user/:uid", (req, res, next) => {
-  console.log("all good");
-  const userId = req.params.uid;
-  const restaurant = DUMMY_RESTAURANTS.find((rest) => {
-    console.log(rest.creator);
-    return rest.creator === userId;
-  });
-  if (!restaurant) {
-    const error = new Error(
-      "Could not find a restaurant for the provided user id."
-    );
-    error.code = 404;
-    return next(error);
-  }
-  res.json({ restaurant });
-});
+router.patch(
+  "/:id",
+  [check("title").not().isEmpty(), check("description").isLength({ min: 5 })],
+  restaurantsControllers.updateRestaurant
+);
+
+router.delete("/:id", restaurantsControllers.deleteRestaurant);
 
 module.exports = router;
