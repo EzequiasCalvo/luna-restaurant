@@ -35,7 +35,6 @@ const getRestaurantById = async (req, res, next) => {
 };
 
 const getRestaurantsByUserId = async (req, res, next) => {
-  console.log("all good");
   const userId = req.params.uid;
   let restaurants;
   try {
@@ -78,7 +77,6 @@ const createRestaurant = async (req, res, next) => {
     return next(error);
   }
 
-  console.log(coordinates);
   const createdRestaurant = new Restaurant({
     title,
     description,
@@ -167,7 +165,7 @@ const deleteRestaurant = async (req, res, next) => {
   let restaurant;
 
   try {
-    restaurant = await Restaurant.findById(restaurantId);
+    restaurant = await Restaurant.findById(restaurantId).populate("creator");
   } catch (err) {
     const error = new HttpError(
       "Something went wrong, could not delete a restaurant.",
@@ -176,8 +174,21 @@ const deleteRestaurant = async (req, res, next) => {
     return next(error);
   }
 
+  if (!restaurant) {
+    const error = new HttpError(
+      "Could not find restaurant for the provided id",
+      404
+    );
+    return next(error);
+  }
+
   try {
-    await restaurant.remove();
+    const session = await mongoose.startSession();
+    session.startTransaction();
+    await restaurant.remove({ session: session });
+    restaurant.creator.restaurants.pull(restaurant);
+    await restaurant.creator.save({ session: session });
+    session.commitTransaction();
   } catch (err) {
     const error = new HttpError(
       "Something went wrong, could not delete a restaurant.",
