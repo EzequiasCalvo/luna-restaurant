@@ -1,8 +1,10 @@
 const HttpError = require("../models/http-error");
-const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
+const mongoose = require("mongoose");
+
 const getCoordsForAdress = require("../util/location");
 const Restaurant = require("../models/restaurant");
+const User = require("../models/user");
 
 const getRestaurantById = async (req, res, next) => {
   const restaurantId = req.params.id;
@@ -87,9 +89,29 @@ const createRestaurant = async (req, res, next) => {
     creator,
   });
 
-  console.log(createdRestaurant);
+  let user;
   try {
-    await createdRestaurant.save();
+    user = await User.findById(creator);
+  } catch (err) {
+    const error = new HttpError(
+      "Creating restaurant failed, please try again.",
+      500
+    );
+    return next(error);
+  }
+
+  if (!user) {
+    const error = new HttpError("User not found", 500);
+    return next(error);
+  }
+
+  try {
+    const session = await mongoose.startSession();
+    session.startTransaction();
+    createdRestaurant.save({ session: session });
+    user.restaurants.push(createdRestaurant);
+    await user.save({ session: session });
+    session.commitTransaction();
   } catch (err) {
     const error = new HttpError(
       "Creating restaurant failed, please try again.",
@@ -103,7 +125,9 @@ const createRestaurant = async (req, res, next) => {
 const updateRestaurant = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    throw new HttpError("Invalid inputs passed, please check your data.", 422);
+    return next(
+      new HttpError("Invalid inputs passed, please check your data.", 422)
+    );
   }
 
   const { title, description } = req.body;
