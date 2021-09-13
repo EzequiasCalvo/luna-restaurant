@@ -100,9 +100,8 @@ const Login = () => {
     }));
   };
   return (
-    <>
-      <Navbar></Navbar>
       <Container>
+      <Navbar></Navbar>
         <TitleContainer>
           <Title>Login</Title>
         </TitleContainer>
@@ -124,7 +123,6 @@ const Login = () => {
           <BigButton>Login</BigButton>
         </Form>
       </Container>
-    </>
   );
 };
 
