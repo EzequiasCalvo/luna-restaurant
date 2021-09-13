@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 import Logo from "../../assets/LUNA.png";
@@ -9,6 +9,7 @@ const NavContainer = styled.div`
   width: 100%;
   height: 60px;
   background-color: #ffffff;
+  border-bottom: 1px solid #f8f8f8;
 `;
 
 const LeftWrapper = styled.div`
@@ -59,11 +60,23 @@ const DefaultFonts = styled.div`
   }
 `;
 
-const Home = styled(DefaultFonts)``;
+const Home = styled(DefaultFonts)`
+  border-bottom: ${props => (props.selected === 'home' ? '2px solid #e47d31' : '')};
+  font-weight: ${props => (props.selected === 'home' ? '600' : 'normal')};
+  padding-bottom: 5px;
+`;
 
-const Search = styled(DefaultFonts)``;
+const Search = styled(DefaultFonts)`
+  border-bottom: ${props => (props.selected === 'search' ? '2px solid #e47d31' : '')};
+  font-weight: ${props => (props.selected === 'search' ? '600' : 'normal')};
+  padding-bottom: 5px;
+  `;
 
-const Profile = styled(DefaultFonts)``;
+const Profile = styled(DefaultFonts)`
+  border-bottom: ${props => (props.selected === 'profile' ? '2px solid #e47d31' : '')};
+  font-weight: ${props => (props.selected === 'profile' ? '600' : 'normal')};
+  padding-bottom: 5px;  
+`;
 
 const Registration = styled.div`
   padding-right: 5%;
@@ -72,6 +85,9 @@ const Registration = styled.div`
 export const NavBarButton = styled.button`
   background-color: #e47d31;
   color: white;
+  line-height: 1.2rem;
+  font: 1rem Helvetica, sans-serif;
+  text-align: center;
   width: 5.5rem;
   height: 2rem;
   border: none;
@@ -90,6 +106,13 @@ const LoginButton = styled(NavBarButton)`
 `;
 
 const Navbar = () => {
+  const [selectedPage, setSelectedPage] = useState('home')
+ 
+  const handleClick = (page) => {
+    setSelectedPage(page)
+    console.log(selectedPage)
+  }
+
   return (
     <NavContainer>
       <LeftWrapper>
@@ -97,9 +120,9 @@ const Navbar = () => {
       </LeftWrapper>
       <RightWrapper>
         <Pages>
-          <Home>Home</Home>
-          <Search>Search</Search>
-          <Profile>Profile</Profile>
+          <Home selected={selectedPage} onClick={() => handleClick('home')}>Home</Home>
+          <Search selected={selectedPage} onClick={() => handleClick('search')}>Search</Search>
+          <Profile selected={selectedPage} onClick={() => handleClick('profile')}>Profile</Profile>
           <Registration>
             <SignupButton>Signup</SignupButton>
             <LoginButton>Login</LoginButton>
