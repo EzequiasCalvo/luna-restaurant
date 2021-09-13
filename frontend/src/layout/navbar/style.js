@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NavContainer = styled.div`
+export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -9,20 +9,20 @@ const NavContainer = styled.div`
   border-bottom: 1px solid #f8f8f8;
 `;
 
-const LeftWrapper = styled.div`
+export const LeftWrapper = styled.div`
   width: 50%;
   display: flex;
   align-items: center;
   padding-left: 2%;
 `;
 
-const RightWrapper = styled.div`
+export const RightWrapper = styled.div`
   width: 50%;
   display: flex;
   padding-right: 2%;
 `;
 
-const LeftLogo = styled.img`
+export const LeftLogo = styled.img`
   max-width: 80px;
   max-height: 50px;
   cursor: pointer;
@@ -35,14 +35,14 @@ const LeftLogo = styled.img`
   }
 `;
 
-const Pages = styled.div`
+export const Pages = styled.div`
   min-width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   /* padding-right: 2%; */
 `;
-const DefaultFonts = styled.div`
+export const DefaultFonts = styled.div`
   font-family: Helvetica;
   font-style: normal;
   font-weight: normal;
@@ -57,28 +57,28 @@ const DefaultFonts = styled.div`
   }
 `;
 
-const Home = styled(DefaultFonts)`
+export const Home = styled(DefaultFonts)`
   border-bottom: ${(props) =>
     props.selected === "home" ? "2px solid #e47d31" : ""};
   font-weight: ${(props) => (props.selected === "home" ? "600" : "normal")};
   padding-bottom: 5px;
 `;
 
-const Search = styled(DefaultFonts)`
+export const Search = styled(DefaultFonts)`
   border-bottom: ${(props) =>
     props.selected === "search" ? "2px solid #e47d31" : ""};
   font-weight: ${(props) => (props.selected === "search" ? "600" : "normal")};
   padding-bottom: 5px;
 `;
 
-const Profile = styled(DefaultFonts)`
+export const Profile = styled(DefaultFonts)`
   border-bottom: ${(props) =>
     props.selected === "profile" ? "2px solid #e47d31" : ""};
   font-weight: ${(props) => (props.selected === "profile" ? "600" : "normal")};
   padding-bottom: 5px;
 `;
 
-const Registration = styled.div`
+export const Registration = styled.div`
   padding-right: 5%;
 `;
 
@@ -98,9 +98,9 @@ export const NavBarButton = styled.button`
   }
 `;
 
-const SignupButton = styled(NavBarButton)`
+export const SignupButton = styled(NavBarButton)`
   border-radius: 25px 0 0 25px;
 `;
-const LoginButton = styled(NavBarButton)`
+export const LoginButton = styled(NavBarButton)`
   border-radius: 0 25px 25px 0;
 `;
