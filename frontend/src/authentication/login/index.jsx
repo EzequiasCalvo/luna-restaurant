@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import Navbar from "../../layout/navbar";
 
 import styled from "styled-components";
+import styledProps from 'styled-props';
+import { darken } from 'polished'
+
+const background = {
+  primary: '#e47d31',
+  primaryDarken: darken(0.1, '#e47d31'),
+};
 
 export const Container = styled.div`
   padding-bottom: 20%;
@@ -37,7 +44,7 @@ export const Form = styled.div`
 `;
 
 export const BigButton = styled.button`
-  background-color: #e47d31;
+  background-color: ${background.primary};
   border: none;
   border-radius: 1.6rem;
   width: 12%;
@@ -47,6 +54,7 @@ export const BigButton = styled.button`
   margin-top: 3%;
   :hover {
     cursor: pointer;
+    background-color: ${styledProps(background)};
   }
 `;
 
@@ -120,7 +128,7 @@ const Login = () => {
               onChange={(e) => handleChange("password", e)}
             />
           </InputWrapper>
-          <BigButton>Login</BigButton>
+          <BigButton primaryDarken>Login</BigButton>
         </Form>
       </Container>
   );
