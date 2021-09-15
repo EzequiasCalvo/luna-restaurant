@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import Navbar from "../../layout/navbar";
-
 import {
+  BigButton,
   Container,
   Form,
   Input,
+  InputWrapper,
   Title,
   TitleContainer,
-  InputWrapper,
-  BigButton,
 } from "../style";
 
-const Login = () => {
+const Registration = () => {
   // eslint-disable-next-line no-unused-vars
   const [state, setState] = useState({
     email: "",
-    password: "",
   });
 
   const handleChange = (type, e) => {
@@ -30,28 +28,20 @@ const Login = () => {
     <Container>
       <Navbar></Navbar>
       <TitleContainer>
-        <Title>Login</Title>
+        <Title>Registration</Title>
       </TitleContainer>
       <Form>
         <InputWrapper>
           <Input
             type="email"
-            // defaultValue="Email"
-            placeholder="Email"
+            placeholder="E-mail address"
             onChange={(e) => handleChange("email", e)}
           />
         </InputWrapper>
-        <InputWrapper>
-          <Input
-            type="password"
-            placeholder="Password"
-            onChange={(e) => handleChange("password", e)}
-          />
-        </InputWrapper>
-        <BigButton primaryDarken>Login</BigButton>
+        <BigButton primaryDarken>Register</BigButton>
       </Form>
     </Container>
   );
 };
 
-export default Login;
+export default Registration;
