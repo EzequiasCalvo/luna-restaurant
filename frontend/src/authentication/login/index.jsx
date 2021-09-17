@@ -4,6 +4,7 @@ import Navbar from "../../layout/navbar";
 import styled from "styled-components";
 import styledProps from 'styled-props';
 import { darken } from 'polished'
+import Footer from "../../layout/navbar/footer";
 
 const background = {
   primary: '#e47d31',
@@ -130,6 +131,7 @@ const Login = () => {
           </InputWrapper>
           <BigButton primaryDarken>Login</BigButton>
         </Form>
+        <Footer></Footer>
       </Container>
   );
 };
