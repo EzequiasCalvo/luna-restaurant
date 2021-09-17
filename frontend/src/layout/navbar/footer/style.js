@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import { darken } from "polished";
+
+const color = {
+  iconDarken: darken(0.3, "#979797"),
+}
 
 export const NavRightWrapper = styled.div`
   display: flex;
@@ -9,10 +14,14 @@ export const NavRightWrapper = styled.div`
 `;
 
 export const FooterWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
   height: 91px;
+  overflow: hidden;
   background-color: white;
-  z-index: 3;
+  padding: 0px;
 `;
 
 export const FooterFlexWrapper = styled.div`
@@ -41,11 +50,15 @@ export const HeaderSpan = styled.span`
   vertical-align: middle;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  :hover {
+    color: ${color.iconDarken};
+    cursor: pointer;
+  }
 `;
 
 export const CopyRightSpan = styled.span`
   font-size: 0.8rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
 `;
 
 export const SocialMediaIcon = styled.div`
@@ -57,4 +70,9 @@ export const SocialMediaIcon = styled.div`
   text-align: center;
   vertical-align: middle;
   line-height: 1.5rem;
+  :hover {
+    border: solid 1.8px ${color.iconDarken};
+    color: ${color.iconDarken};
+    cursor: pointer;
+  }
 `;

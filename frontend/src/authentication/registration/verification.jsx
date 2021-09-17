@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../../layout/navbar";
+import Footer from "../../layout/navbar/footer";
 import {
   Container,
   FormContainer,
@@ -54,6 +55,7 @@ const Verification = () => {
           <VerificationButton>Register</VerificationButton>
         </FormVerification>
       </FormContainer>
+      <Footer></Footer>
     </Container>
   );
 };

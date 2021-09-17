@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../layout/navbar";
+import Footer from "../../layout/navbar/footer";
 import {
   Container,
   Title,
@@ -23,6 +24,7 @@ const Message = () => {
           folder. Our apologies for any inconvienience.
         </MessageParagraph>
       </MessageWrapper>
+      <Footer></Footer>
     </Container>
   );
 };

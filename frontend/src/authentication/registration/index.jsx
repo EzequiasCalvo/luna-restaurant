@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../layout/navbar";
+import Footer from "../../layout/navbar/footer";
+
 import {
   BigButton,
   Container,
@@ -40,6 +42,7 @@ const Registration = () => {
         </InputWrapper>
         <BigButton primaryDarken>Register</BigButton>
       </Form>
+      <Footer></Footer>
     </Container>
   );
 };

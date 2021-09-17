@@ -10,8 +10,8 @@ const background = {
 };
 
 export const Container = styled.div`
-  padding-bottom: 20%;
   background: #f2f2f2;
+  padding-bottom: 10%;
 `;
 
 export const TitleContainer = styled.div`
@@ -40,6 +40,7 @@ export const Form = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 3%;
+  padding-bottom: 10%;
 `;
 
 export const FormContainer = styled.div`
@@ -126,4 +127,5 @@ export const MessageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 15%;
 `;
