@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../layout/navbar";
 
+<<<<<<< HEAD
 import styled from "styled-components";
 import styledProps from 'styled-props';
 import { darken } from 'polished'
@@ -92,6 +93,17 @@ export const Input = styled.input`
 const InputWrapper = styled.div`
   padding: 0.5%;
 `;
+=======
+import {
+  Container,
+  Form,
+  Input,
+  Title,
+  TitleContainer,
+  InputWrapper,
+  BigButton,
+} from "../style";
+>>>>>>> 65072ceba2f6637151a37f25f7d146d034418c47
 
 const Login = () => {
   // eslint-disable-next-line no-unused-vars
@@ -109,8 +121,9 @@ const Login = () => {
     }));
   };
   return (
-      <Container>
+    <Container>
       <Navbar></Navbar>
+<<<<<<< HEAD
         <TitleContainer>
           <Title>Login</Title>
         </TitleContainer>
@@ -133,6 +146,30 @@ const Login = () => {
         </Form>
         <Footer></Footer>
       </Container>
+=======
+      <TitleContainer>
+        <Title>Login</Title>
+      </TitleContainer>
+      <Form>
+        <InputWrapper>
+          <Input
+            type="email"
+            // defaultValue="Email"
+            placeholder="Email"
+            onChange={(e) => handleChange("email", e)}
+          />
+        </InputWrapper>
+        <InputWrapper>
+          <Input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => handleChange("password", e)}
+          />
+        </InputWrapper>
+        <BigButton primaryDarken>Login</BigButton>
+      </Form>
+    </Container>
+>>>>>>> 65072ceba2f6637151a37f25f7d146d034418c47
   );
 };
 
