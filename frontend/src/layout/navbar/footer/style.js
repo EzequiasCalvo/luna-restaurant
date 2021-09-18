@@ -68,8 +68,21 @@ export const SocialMediaIcon = styled.div`
   vertical-align: middle;
   line-height: 1.5rem;
   :hover {
-    border: solid 1.8px ${color.iconDarken};
+    border: solid 0px ${color.iconDarken};
     color: ${color.iconDarken};
     cursor: pointer;
+    .fa-facebook-f {
+        color: #507BC7;
+;
+    }
+    .fa-twitter {
+        color: lightblue;
+    }
+    .fa-google-plus-g {
+        color: #EC493E;
+    }
+    .fa-instagram {
+        color: #E87525;
+    }
   }
 `;
