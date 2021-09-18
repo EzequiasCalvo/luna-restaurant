@@ -10,9 +10,16 @@ const background = {
 };
 
 export const Container = styled.div`
+  width: 100%;
+  min-height: 90vh;
   background: #f2f2f2;
-  padding-bottom: 10%;
 `;
+
+export const Main = styled.div`
+  position:relative; 
+  min-height: 100vh;
+  width: 100vw;
+`
 
 export const TitleContainer = styled.div`
   width: 100%;
@@ -115,7 +122,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const MessageParagraph = styled.p`
-  width: 35%;
+  max-width: 35%;
   font-family: Helvetica;
   font-size: 1rem;
   line-height: 1.2rem;
@@ -124,8 +131,8 @@ export const MessageParagraph = styled.p`
 `;
 
 export const MessageWrapper = styled.div`
+  padding-top: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 15%;
 `;

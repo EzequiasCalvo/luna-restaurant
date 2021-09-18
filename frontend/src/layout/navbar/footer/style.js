@@ -10,18 +10,15 @@ export const NavRightWrapper = styled.div`
   min-width: 40%;
   justify-content: space-around;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
 `;
 
 export const FooterWrapper = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
-  height: 91px;
-  overflow: hidden;
+  min-width: 100%;
   background-color: white;
-  padding: 0px;
 `;
 
 export const FooterFlexWrapper = styled.div`

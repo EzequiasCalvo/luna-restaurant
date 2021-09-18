@@ -3,6 +3,7 @@ import Navbar from "../../layout/navbar";
 import Footer from "../../layout/navbar/footer";
 
 import {
+  Main,
   Container,
   Form,
   Input,
@@ -28,8 +29,9 @@ const Login = () => {
     }));
   };
   return (
-    <Container>
+    <Main>
       <Navbar></Navbar>
+    <Container>
       <TitleContainer>
         <Title>Login</Title>
       </TitleContainer>
@@ -51,8 +53,9 @@ const Login = () => {
         </InputWrapper>
         <BigButton primaryDarken>Login</BigButton>
       </Form>
-      <Footer></Footer>
     </Container>
+      <Footer></Footer>
+      </Main>
   );
 };
 

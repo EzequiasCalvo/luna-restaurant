@@ -4,7 +4,7 @@ export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 60px;
+  min-height: 8vh;
   background-color: #ffffff;
   border-bottom: 1px solid #f8f8f8;
 `;
