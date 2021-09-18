@@ -12,6 +12,7 @@ import {
   SignupButton,
   LoginButton,
 } from "./style";
+import {Motion, spring} from "react-motion";
 
 import Logo from "../../assets/LUNA.png";
 
@@ -26,7 +27,14 @@ const Navbar = () => {
   return (
     <NavContainer>
       <LeftWrapper>
-        <LeftLogo src={Logo}></LeftLogo>
+        <Motion defaultStyle={{x: -200, opacity: 0}} style={{x:spring(0), opacity: spring(1, { stiffness: 23, damping: 39 })}}>
+          {(style) => (
+            <LeftLogo src={Logo} style={{
+              transform: `translateX(${style.x}px)`, 
+              opacity: style.opacity}}>
+              </LeftLogo>
+          )}
+        </Motion>
       </LeftWrapper>
       <RightWrapper>
         <Pages>
