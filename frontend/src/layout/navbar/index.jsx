@@ -37,7 +37,10 @@ const Navbar = () => {
         </Motion>
       </LeftWrapper>
       <RightWrapper>
-        <Pages>
+      <Motion defaultStyle={{opacity: 0}} style={{opacity: spring(1, { stiffness: 73, damping: 39 })}}>
+      {(style) => (
+        <Pages style={{
+          opacity: style.opacity}}>
           <Home selected={selectedPage} onClick={() => handleClick("home")}>
             Home
           </Home>
@@ -55,6 +58,8 @@ const Navbar = () => {
             <LoginButton>Login</LoginButton>
           </Registration>
         </Pages>
+      )}
+        </Motion>
       </RightWrapper>
     </NavContainer>
   );
