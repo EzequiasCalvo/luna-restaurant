@@ -26,12 +26,9 @@ export const LeftLogo = styled.img`
   max-width: 80px;
   max-height: 50px;
   cursor: pointer;
-  opacity: 1;
-  filter: alpha(opacity=100);
 
   :hover {
-    opacity: 0.7;
-    filter: alpha(opacity=40);
+    border-bottom : 2px solid black;
   }
 `;
 
