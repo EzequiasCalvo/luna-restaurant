@@ -1,5 +1,4 @@
 import React from "react";
-import Masonry from "react-masonry-css";
 
 import RestaurantCard from "./RestaurantCard";
 
@@ -15,18 +14,12 @@ export const ContainerList = styled.div`
 const RestaurantList = () => {
   return (
     <ContainerList>
-      {/* <Masonry
-        breakpointCols={breakpoints}
-        className="custom-masonry"
-        columnClassName="custom-masonry-column"
-      > */}
       <RestaurantCard />
       <RestaurantCard />
       <RestaurantCard />
       <RestaurantCard />
       <RestaurantCard />
       <RestaurantCard />
-      {/* </Masonry> */}
     </ContainerList>
   );
 };
