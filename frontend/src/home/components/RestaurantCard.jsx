@@ -18,7 +18,7 @@ export const RestaurantMainContainer = styled.div`
   width: 16rem;
   height: 22rem;
   background: white;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   border-radius: 3px;
   border: 1px solid #ebebeb;
   cursor: pointer;

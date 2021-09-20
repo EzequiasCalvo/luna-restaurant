@@ -9,6 +9,7 @@ export const ContainerList = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  padding-bottom: 8rem;
 `;
 
 const RestaurantList = () => {

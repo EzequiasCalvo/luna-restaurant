@@ -102,11 +102,6 @@ export const Underline = styled.div`
   border-top: 2px solid ${background.primary};
 `;
 
-// export const CardWrapper = styled.div`
-//   /* width: 100%; */
-//   border: 1px solid salmon;
-// `;
-
 const Home = () => {
   return (
     <Container>
