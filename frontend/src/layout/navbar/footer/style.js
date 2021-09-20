@@ -3,7 +3,7 @@ import { darken } from "polished";
 
 const color = {
   iconDarken: darken(0.3, "#979797"),
-}
+};
 
 export const NavRightWrapper = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export const NavRightWrapper = styled.div`
 `;
 
 export const FooterWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   min-width: 100%;
@@ -72,17 +72,16 @@ export const SocialMediaIcon = styled.div`
     color: ${color.iconDarken};
     cursor: pointer;
     .fa-facebook-f {
-        color: #507BC7;
-;
+      color: #507bc7;
     }
     .fa-twitter {
-        color: lightblue;
+      color: lightblue;
     }
     .fa-google-plus-g {
-        color: #EC493E;
+      color: #ec493e;
     }
     .fa-instagram {
-        color: #E87525;
+      color: #e87525;
     }
   }
 `;

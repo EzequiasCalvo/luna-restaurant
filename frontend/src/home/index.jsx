@@ -8,9 +8,8 @@ import { lighten } from "polished";
 import Footer from "../layout/navbar/footer";
 
 import foodImage from "../assets/background/bg1.jpg";
-import foodImage2 from "../assets/background/bg2.jpg";
-import foodImage3 from "../assets/background/bg3.jpg";
-import foodImage4 from "../assets/background/bg4.png";
+
+import RestaurantList from "./components/RestaurantList";
 
 const background = {
   primary: "#e47d31",
@@ -72,6 +71,42 @@ export const ButtonSearchbar = styled.button`
   }
 `;
 
+export const RestaurantsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  min-height: 60vh;
+  padding-top: 2.5%;
+`;
+
+export const TitleWrapper = styled.div`
+  width: 100%;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Title = styled.h1`
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+  color: #4c4c4c;
+  margin-bottom: 2%;
+`;
+
+export const Underline = styled.div`
+  max-width: 80%;
+  margin: 3% 0 0 10%;
+  height: 2rem;
+  border-top: 2px solid ${background.primary};
+`;
+
+export const CardWrapper = styled.div`
+  /* width: 100%; */
+  border: 1px solid salmon;
+`;
+
 const Home = () => {
   return (
     <Container>
@@ -95,6 +130,17 @@ const Home = () => {
           </ImgContainer>
         )}
       </Motion>
+      <RestaurantsWrapper>
+        <TitleWrapper>
+          <Title>
+            Best rated restaurants
+            <Underline></Underline>
+          </Title>
+        </TitleWrapper>
+        <CardWrapper>
+          <RestaurantList></RestaurantList>
+        </CardWrapper>
+      </RestaurantsWrapper>
       <Footer></Footer>
     </Container>
   );
