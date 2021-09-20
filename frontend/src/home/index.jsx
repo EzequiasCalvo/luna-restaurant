@@ -27,7 +27,7 @@ export const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 25vh;
+  min-height: 30vh;
   background-image: url(${foodImage});
   background-size: cover;
 `;
