@@ -22,18 +22,3 @@ code {
 .styles_typicalWrapper__1_Uvh::after {
   content: "" !important;
 }
-
-/* .custom-masonry {
-  display: flex;
-  margin-bottom: 50px;
-}
-
-.custom-masonry-column {
-  padding-left: 20px;
-  background-clip: padding-box;
-}
-
-.custom-masonry-column > .div {
-  background: red;
-  margin-bottom: 20px;
-} */
