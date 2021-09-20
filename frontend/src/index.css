@@ -19,6 +19,10 @@ code {
     monospace;
 }
 
+.styles_typicalWrapper__1_Uvh::after {
+  content: "" !important;
+}
+
 /* .custom-masonry {
   display: flex;
   margin-bottom: 50px;

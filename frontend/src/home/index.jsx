@@ -98,6 +98,11 @@ export const Title = styled.h1`
   text-transform: uppercase;
   color: #4c4c4c;
   margin-bottom: 2%;
+
+  &p::after {
+    content: "";
+    animation: styles_blink__2CKyC 1s infinite step-start;
+  }
 `;
 
 export const Underline = styled.div`
