@@ -6,6 +6,9 @@ import defaultImage from "../../assets/background/bg2.jpg";
 import styled from "styled-components";
 import {  lighten } from "polished";
 
+// .grow { transition: all .2s ease-in-out; }
+// .grow:hover { transform: scale(1.1); }
+
 const background = {
   primary: "#e47d31",
   primaryDarken: lighten(0.1, "#e47d31"),
@@ -29,9 +32,14 @@ export const RestaurantMainContainer = styled.div`
   border-radius: 3px;
   border: 1px solid #ebebeb;
   cursor: pointer;
+  transition: all .2s ease-in-out;
 
   &:hover ${TopBar} {
     background-color: ${background.primaryDarken};
+  }
+
+  :hover {
+    transform: scale(1.1)
   }
 
   img {
