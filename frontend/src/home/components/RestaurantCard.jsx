@@ -1,11 +1,18 @@
 import React from "react";
-import styled from "styled-components";
 import StarRatingComponent from "react-rating-stars-component";
 
 import defaultImage from "../../assets/background/bg2.jpg";
 
+import styled from "styled-components";
+import {  lighten } from "polished";
+
+const background = {
+  primary: "#e47d31",
+  primaryDarken: lighten(0.1, "#e47d31"),
+};
+
 export const TopBar = styled.div`
-  background: #e47d31;
+  background: ${background.primary};
   height: 8px;
   width: 100%;
   border-top-right-radius: 3px;
@@ -24,7 +31,7 @@ export const RestaurantMainContainer = styled.div`
   cursor: pointer;
 
   &:hover ${TopBar} {
-    height: 0.8rem;
+    background-color: ${background.primaryDarken};
   }
 
   img {
@@ -33,6 +40,9 @@ export const RestaurantMainContainer = styled.div`
     margin-top: 14px;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
+    :hover {
+      opacity: 0.8;
+    }
   }
 `;
 
