@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../layout/navbar";
 
 import { Motion, spring } from "react-motion";
+import Typical from 'react-typical'
 
 import styled from "styled-components";
 import { lighten } from "polished";
@@ -30,6 +31,10 @@ export const ImgContainer = styled.div`
   background-image: url(${foodImage});
   background-size: cover;
 `;
+
+export const AnimationWrapper = styled.div`
+  width: 100%;
+`
 
 export const InputWrapper = styled.input`
   width: 30%;
@@ -115,20 +120,27 @@ const Home = () => {
       >
         {(style) => (
           <ImgContainer
-            style={{
-              transform: `translateX(${style.x}px)`,
-              opacity: style.opacity,
-            }}
+          style={{
+            transform: `translateX(${style.x}px)`,
+            opacity: style.opacity,
+          }}
           >
-            <InputWrapper placeholder="Search..."></InputWrapper>
-            <ButtonSearchbar>Search</ButtonSearchbar>
+            
+            <InputWrapper placeholder="Search...">
+            </InputWrapper>
+            <ButtonSearchbar>
+              Search
+              </ButtonSearchbar>
           </ImgContainer>
         )}
       </Motion>
       <RestaurantsWrapper>
         <TitleWrapper>
           <Title>
-            Best rated restaurants
+          <Typical
+                steps={['best rated restaurants', 3000, 'Search whatever you want', 500, 'Mexican', 500, 'Thai', 500, 'Indian', 500, 'best rated restaurants']}
+                loop={1}
+              />
             <Underline></Underline>
           </Title>
         </TitleWrapper>
