@@ -102,10 +102,10 @@ export const Underline = styled.div`
   border-top: 2px solid ${background.primary};
 `;
 
-export const CardWrapper = styled.div`
-  /* width: 100%; */
-  border: 1px solid salmon;
-`;
+// export const CardWrapper = styled.div`
+//   /* width: 100%; */
+//   border: 1px solid salmon;
+// `;
 
 const Home = () => {
   return (
@@ -137,9 +137,7 @@ const Home = () => {
             <Underline></Underline>
           </Title>
         </TitleWrapper>
-        <CardWrapper>
-          <RestaurantList></RestaurantList>
-        </CardWrapper>
+        <RestaurantList></RestaurantList>
       </RestaurantsWrapper>
       <Footer></Footer>
     </Container>
