@@ -99,10 +99,9 @@ export const Title = styled.h1`
   color: #4c4c4c;
   margin-bottom: 2%;
 
-  &p::after {
-    content: "";
-    animation: styles_blink__2CKyC 1s infinite step-start;
-  }
+  & .styles_typicalWrapper__1_Uvh::after {
+  content: "" !important;
+}
 `;
 
 export const Underline = styled.div`
